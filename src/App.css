@@ -1,38 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-smooth: always;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(90deg, #020c1c, #020c1c);
+}
+
+/* ----------NAVBAR -------- */
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: #111828;
+  position: sticky;
+  top: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 150px;
+}
+
+nav .arrow {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: #fff;
+}
+
+nav input {
+  background-color: transparent;
+  border: 1px solid #2a3249;
+  border-radius: 10px;
+  padding: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav input:focus {
+  border: 1px solid #2a3249;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ---------END OF NAVBAR--------- */
+
+/* ------- city container ---------- */
+.city_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.city_container li {
+  border: 2px solid #141a2a;
+  padding: 10px;
+  width: 230px;
+  height: 50px;
+  text-align: center;
+  border-radius: 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.city_container li:hover {
+  background-color: #3a32c3;
+}
+
+.city_container li:hover span {
+  color: #3a32c3;
+  background-color: #dcd8f9;
+}
+
+.plate_number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #3928b9;
+  padding: 6px;
+}
+
+/* ------- end city container ---------- */
+
+/* --------------city_weather_container----- */
+
+.city_weather_container {
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #293042;
+  margin-top: 15px;
+}
+
+/* ------------- end of weather container ----------  */
+
+/* ---------------- CARDS ---------------- */
+
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #465e84, #136ad4);
+  border-radius: 20px;
+  margin: 15px;
+  outline: none;
+  color: white;
+  box-shadow: 3px 3px 14px 7px rgba(0, 0, 0, 0.2);
+  transition: 250ms;
+  padding: 15px;
+}
+
+.card_container img {
+  width: 110px;
+  height: 110px;
+}
+
+.today_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 250px;
+  height: 450px;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.today_card .city_name {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.219);
+}
+
+.card_container:hover {
+  background: linear-gradient(90deg, #685e91, #3c5b8c);
+}
+
+.day_clock {
+  display: flex;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.clock {
+  opacity: 0.6;
+  text-align: center;
+}
+
+.today_card .temp {
+  display: flex;
+  width: 100%;
+  align-self: center;
+  justify-content: center;
+  font-size: 65px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.219);
+  box-shadow: 3px 9px 3px 3px rgba(0, 0, 0, 7);
+  padding: 7px;
+}
+
+.today_card .temp .celc {
+  font-size: 25px;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.today_card .main {
+  font-size: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.219);
+}
+
+.today_card .feels_like,
+.wind_speed {
+  display: flex;
+  gap: 2px;
+}
+
+.today_card .description {
+  font-size: 17px;
+  opacity: 0.7;
 }

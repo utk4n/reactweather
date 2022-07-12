@@ -1,3 +1,7 @@
+![projectScreenshot](https://github.com/utk4n/reactweather/blob/master/reactweatherCSS.jpg)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

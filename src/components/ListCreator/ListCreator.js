@@ -24,7 +24,7 @@ function ListCreator() {
 
   const fetchName = async (lat, lon) => {
     await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=dc0af9ea20aaabbb39926a631667503d&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid={API_KEY}d&units=metric`
     )
       .then((response) => response.json())
       .then((datas) => setCityName(datas.name));
@@ -32,7 +32,7 @@ function ListCreator() {
 
   const fetchAPI = async (lat, lon) => {
     await fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=dc0af9ea20aaabbb39926a631667503d&units=metric`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid={API_KEY}d&units=metric`
     )
       .then((response) => response.json())
       .then((datas) => setWeather(datas));

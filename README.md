@@ -1,5 +1,5 @@
 ![projectScreenshot](https://github.com/utk4n/reactweather/blob/master/reactweatherCSS.jpg)
-
+![projectGif](https://github.com/utk4n/reactweather/blob/master/reactWeatherProjct.gif)
 
 
 # Getting Started with Create React App

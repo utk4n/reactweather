@@ -1,7 +1,6 @@
 import Cards from "../Cards/Cards";
 const City = ({ weather, cityName }) => {
-
-  // ° C
+ // ° C
 
   return (
     <div className="city_weather_container">

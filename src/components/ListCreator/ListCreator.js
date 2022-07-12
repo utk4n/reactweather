@@ -1,4 +1,4 @@
-import { useState, useRef} from "react";
+import { useState, useRef } from "react";
 import fetchData from "./data.json";
 import City from "../City/City";
 
@@ -14,7 +14,7 @@ function ListCreator() {
 
   const cityFinder = (e) => {
     const point = e.target.value;
-    return fetchData.find((city) => {
+    fetchData.find((city) => {
       if (point === city.id) {
         const { latitude, longitude } = city;
         fetchAPI(latitude, longitude) && fetchName(latitude, longitude);
@@ -37,7 +37,6 @@ function ListCreator() {
       .then((response) => response.json())
       .then((datas) => setWeather(datas));
   };
-
   return (
     <>
       <ul className="city_container">
@@ -59,7 +58,7 @@ function ListCreator() {
         </div>
       </ul>
 
-      <City weather={weather} cityName={cityName}/>
+      <City weather={weather} cityName={cityName} />
     </>
   );
 }

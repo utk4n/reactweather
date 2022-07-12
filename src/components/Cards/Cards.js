@@ -1,12 +1,14 @@
 import { WiThermometer, WiStrongWind } from "weather-icons-react";
-const Cards = ({ weather, cityName}) => {
+import WeeklyCards from "./WeeklyCards";
+import Highlights from "./Highlights"
+const Cards = ({ weather, cityName }) => {
   const dateObj = { weekday: "long" };
 
   const hour = new Date().getHours();
   const minute = new Date().getDate();
 
-  console.log(weather);
   return (
+
     <div className="card_container">
       <div className="today_card">
         <h2 className="city_name"> {cityName} </h2>
@@ -27,8 +29,8 @@ const Cards = ({ weather, cityName}) => {
           <span className="celc">°C</span>
         </span>
 
-        {weather.current?.weather.map((el) => (
-          <img src={`http://openweathermap.org/img/wn/${el.icon}@2x.png`}></img>
+        {weather.current?.weather.map((el, index) => (
+          <img key={index} src={`http://openweathermap.org/img/wn/${el.icon}@2x.png`}></img>
         ))}
         <span className="feels_like">
           <WiThermometer size={25} color="#fff" />
@@ -50,7 +52,10 @@ const Cards = ({ weather, cityName}) => {
           </div>
         ))}
       </div>
+      <WeeklyCards weather={weather}/>
     </div>
+          
+
   );
 };
 
